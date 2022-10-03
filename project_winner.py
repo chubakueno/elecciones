@@ -53,17 +53,17 @@ for ubigeo in ubigeos:
     print("Ubigeo {} con {} ciudadanos que votaron contabilizado al {:05.2F}%".format(ubigeo, round(dict_votaron[ubigeo]), dict_por_contabilizadas[ubigeo]*100))
 
 print("\nActas impugnadas por ubigeo:")
-total_impugnadas = 0
+total_envidadas_jee = 0
 total_procesadas = 0
 for ubigeo in ubigeos:
-    impugnadas = dict_total_jee[ubigeo]
-    print(f"Ubigeo {ubigeo} con {impugnadas} actas impugnadas")
-    total_impugnadas += impugnadas
+    total_jee = dict_total_jee[ubigeo]
+    print(f"Ubigeo {ubigeo} con {total_jee} actas impugnadas")
+    total_envidadas_jee += total_jee
     total_procesadas += dict_procesadas[ubigeo]
 
 print(f"\nTotal procesadas: {total_procesadas}")
-print(f"Total impugnadas: {total_impugnadas}")
-print(f"Porcentaje de actas impugnadas: {round(total_impugnadas/total_procesadas*100,2)}%")
+print(f"Total enviadas al JEE: {total_envidadas_jee}")
+print(f"Porcentaje de actas enviadas al JEE: {round(total_envidadas_jee/total_procesadas*100,2)}%")
 
 print("\nProyeccion:")
 for partido in tentativo:
